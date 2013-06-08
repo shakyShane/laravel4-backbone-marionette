@@ -1,0 +1,11 @@
+{
+  "name"         : "ggGallery",
+  "version"      : "0.0.1",
+  "dependencies" : {
+    "modernizr" : null,
+    "jquery" : "~1.9.x",
+    "requirejs" : null,
+    "backbone.marionette" : null
+  },
+  "directory" : "public/components"
+}

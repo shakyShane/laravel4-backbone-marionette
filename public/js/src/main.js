@@ -1,0 +1,1 @@
+require(['AppView'], function(AppView){});

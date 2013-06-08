@@ -1,0 +1,1 @@
+define("AppView",[],function(){alert("working")}),require(["AppView"],function(e){}),define("main",function(){});
