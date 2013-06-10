@@ -55,7 +55,7 @@ or
     	'local' => array('yourmachinename'),
     ));
 
-## That's IT
+## That's it
 Seriously. Run `php artisan serve` to see for yourself!
 
 ## What do I get?
