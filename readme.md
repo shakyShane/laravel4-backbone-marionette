@@ -11,6 +11,11 @@ This boilerplate sets up the front-end stuff for a Backbone App, follow this gui
 6. Has pre-configured build-tasks.
 7. Has Sass & Live-reload support.
 
+#Pre-install
+If you don't have these - you'll need to install them globally:
+
+  npm install -g grunt-cli bower karma
+
 #Install (all steps required!)
 **Clone the repo**
 
