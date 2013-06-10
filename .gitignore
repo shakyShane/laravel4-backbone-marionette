@@ -9,3 +9,4 @@ node_modules/
 public/components/
 public/css/style.css
 public/js/dist
+_ide_helper.php
