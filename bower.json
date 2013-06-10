@@ -1,0 +1,12 @@
+{
+  "name": "L4BBMB",
+  "version": "0.0.1",
+  "dependencies": {
+    "modernizr": null,
+    "jquery": "~1.9.x",
+    "requirejs": null,
+    "backbone.marionette": null,
+    "jasmine-jquery": "~1.5.2"
+  },
+  "directory": "public/components"
+}

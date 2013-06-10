@@ -1,1 +1,3 @@
-require(['AppView'], function(AppView){});
+require(['views/AppView'], function(AppView){
+
+});

@@ -12,10 +12,13 @@ files = [
   JASMINE_ADAPTER,
   REQUIRE,
   REQUIRE_ADAPTER,
+  'dist/deps.min.js',
+  '../components/jasmine-jquery/lib/jasmine-jquery.js',
+  'test/jasmineSettings.js',
+  {pattern : 'test/fixtures/**', included : false},
   {pattern : 'lib/**/*.js', included : false},
   {pattern : 'src/**/*.js', included : false},
   {pattern : 'test/**/*Spec.js', included : false},
-
   'test/test-main.js'
 ];
 
@@ -49,8 +52,7 @@ logLevel = LOG_INFO;
 
 
 // enable / disable watching file and executing tests whenever any file changes
-autoWatch = false;
-
+autoWatch = true;
 
 // Start these browsers, currently available:
 // - Chrome
@@ -60,7 +62,8 @@ autoWatch = false;
 // - Safari (only Mac)
 // - PhantomJS
 // - IE (only Windows)
-browsers = ['Chrome'];
+browsers = ["C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"]; // Hack because of an issue on Windows.
+//browsers = ["Chrome"]; // You should be able to use this instead.
 
 
 // If browser does not capture in given timeout [ms], kill it

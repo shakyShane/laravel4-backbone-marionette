@@ -1,17 +1,23 @@
 module.exports = function( grunt ) {
-
-  grunt.initConfig( {
-
+  grunt.initConfig({
     pkg               : grunt.file.readJSON( 'package.json' ),
-    js_dir            : 'public/js/',
-    js_deps           : '<%= js_dir %>dist/deps',
-    js_amd            : '<%= js_dir %>dist/modules',
-    js_all            : '<%= js_dir %>dist/combined',
+    js_dir            : 'public/js',
+    js_deps           : '<%= js_dir %>/dist/deps',
+    js_amd            : '<%= js_dir %>/dist/modules',
+    js_all            : '<%= js_dir %>/dist/combined',
+    js_dist_file      : '<%= js_all %>.clean.min.js',
+    php_files         : {
+      layout : 'app/views/layouts/master.blade.php'
+    },
+    sass_dir          : 'public/sass',
+    css_dir           : 'public/css',
+    css_dist_file     : 'public/css/style.css',
     concat            : {
       deps  : {
         files : [
           {
             src  : [
+              'public/components/jquery/jquery.min.js',
               'public/components/backbone.marionette/public/javascripts/json2.js',
               'public/components/backbone.marionette/public/javascripts/underscore.js',
               'public/components/backbone.marionette/public/javascripts/backbone.js',
@@ -34,7 +40,6 @@ module.exports = function( grunt ) {
         ]
       }
     },
-    // Uglify
     uglify : {
       deps : {
         files : [
@@ -53,22 +58,29 @@ module.exports = function( grunt ) {
         ]
       }
     },
-    // Compass for SASS - Use external Config File.
     compass : {
       dist : {
         options : {
-          config : 'config.rb'
+          sassDir     : '<%= sass_dir %>',
+          cssDir      : '<%= css_dir %>',
+          environment : 'production',
+          outputStyle : 'compressed'
+        }
+      },
+      dev  : {
+        options : {
+          sassDir : '<%= sass_dir %>',
+          cssDir  : '<%= css_dir %>',
+          outputStyle : 'expanded'
         }
       }
     },
-    // Watchers
     watch : {
       compass : {
-        files : '<%= sass_dir %>',
-        tasks : ['compass']
+        files : '<%= sass_dir %>/**',
+        tasks : ['compass', 'livereload']
       }
     },
-    // Require JS
     requirejs : {
       compile : {
         options : {
@@ -78,79 +90,42 @@ module.exports = function( grunt ) {
         }
       }
     },
-    // Live Reload
-    livereload        : {
-      port : 35729 // Default livereload listening port.
-    },
-    // Configuration to be run (and then tested)
-    regarde           : {
-      // Any Sass to reload
-      css            : {
-        files : '<%= sass_dir %>',
+    regarde : {
+      css : {
+        files : '<%= sass_dir %>/**',
         tasks : ['compass', 'livereload']
-      },
-      // Any Blade views to reload.
-      blade          : {
-        files : '../../app/views/**',
-        tasks : ['livereload']
-      },
-      js             : {
-        files : '<%= amd_dir %>/modules/*',
-        tasks : ['livereload']
-      },
-      js_pub         : {
-        files : ['../js/scripts/*'],
-        tasks : ['js-pub']
-      },
-      js_pub_modules : {
-        files : ['../js/modules/*'],
-        tasks : ['js-pub']
-      },
-      jstests        : {
-        files : '<%= amd_dir %>/tests/spec/*.js',
-        tasks : ['livereload']
-      },
-      adminjs        : {
-        files : '<%= admin_scripts_dir %>/*',
-        tasks : ['js-admin']
       }
     },
-    removelogging     : {
+    removelogging : {
       dist : {
-        src  : "<%= all_combined_js %>.min.js",
-        dest : "<%= all_combined_js %>.clean.min.js"
+        src  : "<%= js_all %>.min.js",
+        dest : "<%= js_dist_file %>"
       }
     },
-    replace           : {
-      dist : {
+    karma : {
+      unit : {
+        configFile : 'public/js/karma.conf.js'
+      }
+    },
+    cache_breaker : {
+      js : {
         options : {
-          variables : {
-            'timestamp' : '<%= new Date().getTime() %>'
-          }
+          filename : '<%= js_dist_file %>'
         },
-        files   : [
-          {
-            src  : [
-              '../../app/views/account/index.temp.blade.php'
-            ],
-            dest : [
-              '../../app/views/account/index.blade.php'
-            ]
-          }
-        ]
+        files   : {
+          '<%= php_files.layout %>' : ['<%= php_files.layout %>']
+        }
       },
-      css  : {
+      css : {
         options : {
-          variables : {
-            'timestamp' : '<%= new Date().getTime() %>'
-          }
+          filename : '<%= css_dist_file %>'
         },
-        files   : [
-          { src : ['../../app/views/layouts/master.temp.blade.php'], dest : '../../app/views/layouts/master.blade.php' }
-        ]
+        files   : {
+          '<%= php_files.layout %>' : ['<%= php_files.layout %>']
+        }
       }
     }
-  } );
+  });
 
   grunt.loadNpmTasks( 'grunt-contrib-uglify' );
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
@@ -158,11 +133,11 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks( 'grunt-contrib-compass' );
   grunt.loadNpmTasks( 'grunt-contrib-requirejs' );
   grunt.loadNpmTasks( 'grunt-regarde' );
-  grunt.loadNpmTasks( 'grunt-contrib-connect' );
   grunt.loadNpmTasks( 'grunt-contrib-livereload' );
   grunt.loadNpmTasks( 'grunt-bower-requirejs' );
   grunt.loadNpmTasks( "grunt-remove-logging" );
-  grunt.loadNpmTasks( 'grunt-replace' );
+  grunt.loadNpmTasks( 'grunt-karma' );
+  grunt.loadNpmTasks( 'grunt-cache-breaker' );
 
   /** Build Javascript Dependencies into single file **/
   grunt.registerTask( 'js-deps', ['concat:deps', 'uglify:deps'] );
@@ -171,18 +146,12 @@ module.exports = function( grunt ) {
   grunt.registerTask( 'js-amd', ['requirejs', 'concat:all'] );
 
   /** Combine Dependencies, RequireJS & all Modules into a single file. **/
-  grunt.registerTask( 'js-all', ['concat:deps', 'requirejs', 'concat:all', 'uglify:all', 'removelogging', 'replace:dist'] );
+  grunt.registerTask( 'js-all', ['concat:deps', 'uglify:deps', 'requirejs', 'concat:all', 'uglify:all', 'removelogging', 'cache_breaker:js'] );
 
-  grunt.registerTask( 'cache-break', ['replace:css'] );
-
-  /** Build the Public Javascript File **/
-  grunt.registerTask( 'js-pub', ['concat:pub', 'uglify:pub'] );
-
-  /** Build for Admin scripts **/
-  grunt.registerTask( 'js-admin', ['concat:admin', 'uglify:admin'] );
+  grunt.registerTask( 'break-cache-css', ['cache_breaker:css'] );
+  grunt.registerTask( 'break-cache-js',  ['cache_breaker:js'] );
 
   /** Run the Live reload server (watches SASS, BLADE & JS files) **/
-  grunt.registerTask( 'server-all', ['livereload-start', 'regarde'] );
-  grunt.registerTask( 'server-sass', ['livereload-start', 'regarde:css'] );
+  grunt.registerTask( 'server-sass', ['livereload-start', 'regarde:css']);
 
 };
