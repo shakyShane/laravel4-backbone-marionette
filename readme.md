@@ -8,7 +8,7 @@ This boilerplate sets up the front-end stuff for a Backbone/Marionette App.
 3. Uses RequireJs for AMD.
 4. Uses the Jasmine Testing Framework.
 5. Uses Karma to Run the tests.
-6. Has pre-configured build-tasks.
+6. Has pre-configured build-tasks, including cache-breaking.
 7. Has Sass & Live-reload support.
 
 #Pre-install
