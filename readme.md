@@ -1,4 +1,4 @@
-##Laravel 4, Backbone & Marionette Boilerplate
+##Laravel 4, Backbone, Marionette, Jasmine, Karma & Sass Boilerplate
 
 This boilerplate sets up the front-end stuff for a Backbone App, follow this guide and pretty soon you'll be up and running.
 
@@ -8,7 +8,8 @@ This boilerplate sets up the front-end stuff for a Backbone App, follow this gui
 3. Uses RequireJs for AMD.
 4. Uses the Jasmine Testing Framework.
 5. Uses Karma to Run the tests.
-6. Has a build-task built in.
+6. Has pre-configured build-tasks.
+7. Has Sass & Live-reload support.
 
 ## Clone the repo
 First you need to pull down this repo. Here we cloning it into a directory called `projectDir`
