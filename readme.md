@@ -73,7 +73,13 @@ to do, is run `grunt js-all` and forget about it.
 
 ## Running the tests
 As I said, it's fully configured for you already & I've even placed a couple of tests in place, just to show you how to go about loading
-modules and testing them, run this from the project root
+modules and testing them, run this from the project root.
+
+#### fixtures
+So you want to load JSON or HTML into your tests from files? No worries, I've pre-configured the Karma Test Runner to use Jasmine-jquery with the correct paths set.
+Just take a look at `js/test/collections/OrdersSpec.js` to see how to load fixtures into your tests.
+
+When ready to start the Karma Test Runner, just run:
 
     grunt karma
 
@@ -81,6 +87,8 @@ or
 
     cd public/js/
     karma start
+
+It will continue watching your files and automatically re-run the tests on each save.
 
 ## Compiling SASS
 Again, all the config is done for you, so you can just dive into the `public/sass` directory and edit the files. Assuming you have compass installed, `gem install compass` if not, just run `grunt server-sass` to automatically watch/compile everything.
