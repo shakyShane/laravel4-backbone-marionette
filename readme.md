@@ -62,13 +62,13 @@ Seriously. Run `php artisan serve` to see for yourself!
 I've just done all the boring config stuff for you. You know, like directory structure, setting up modules & grunt tasks and having a build step.
 When you use this set up, you get to use AMD for your javascript development locally, and then with a single command `grunt js-all` everything get compiled
  down into a single file. You don't even have to worry about your users having an outdated version of your scripts either, because when you run that task, it goes into the
-  `master.blade.php` template file and appends a timestamp to the distribution src file. All without any input from you.
+  `master.blade.php` template file and appends a timestamp to the distribution src file (breaking any cached versions).
 
 ## Config
 It's configured to run out-of-the-box, but feel free to dive into `Gruntfile.js` and make any changes.
 
 ## Compiling JS
-You'll notice that all the dependencies are loaded and compiled automatically into a single & your modules are done separately via AMD. All you need
+You'll notice that all the dependencies are loaded and compiled automatically into a single file & your modules are done separately via AMD. All you need
 to do, is run `grunt js-all` and forget about it.
 
 ## Running the tests
