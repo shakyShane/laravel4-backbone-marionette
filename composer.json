@@ -1,7 +1,6 @@
 {
 	"require": {
 		"laravel/framework": "4.0.*",
-    "intervention/image"          : "dev-master",
     "way/generators"              : "dev-master",
     "barryvdh/laravel-ide-helper" : "v1.0.1",
 		"phpunit/phpunit": "3.7.21"

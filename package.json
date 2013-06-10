@@ -14,6 +14,6 @@
     "grunt-bower-requirejs": "~0.4.1",
     "grunt-remove-logging": "~0.1.1",
     "grunt-karma": "~0.4.4",
-    "cache-breaker" : "~0.1.0"
+    "grunt-cache-breaker" : "~0.2.0"
   }
 }
