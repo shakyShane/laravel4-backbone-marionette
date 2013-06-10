@@ -3,7 +3,7 @@
 This boilerplate sets up the front-end stuff for a Backbone App, follow this guide and pretty soon you'll be up and running.
 
 ##Features
-1. Uses Grunt for task managment.
+1. Uses Grunt for task management.
 2. Uses Bower for front-end dependencies.
 3. Uses RequireJs for AMD.
 4. Uses the Jasmine Testing Framework.
@@ -50,6 +50,11 @@ or
     	'local' => array('yourmachinename'),
     ));
 
+## That's IT
+Seriously. Run `php artisan serve` to see for yourself!
+It's been set up to allow you to develop locally in modules, and then you just use `grunt js-all` to build the Javascript.
+For more details, I'll be writing a blog post about it shorty.
+
 ## Available grunt tasks
 
     // Build all the Javascripts into a single file & break the cache
@@ -72,4 +77,5 @@ or
 
     // Start the Karma server to run all tests
     grunt karma
+
 
