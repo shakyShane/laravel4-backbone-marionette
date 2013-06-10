@@ -90,6 +90,7 @@ It will continue watching your files and automatically re-run the tests on each 
 You want to load JSON or HTML into your tests from files? No worries, I've pre-configured the Karma Test Runner to use Jasmine-jquery with the correct paths set.
 Just take a look at `js/test/collections/OrdersSpec.js` to see how to load fixtures into your tests.
 
+
 ## Compiling SASS
 Again, all the config is done for you, so you can just dive into the `public/sass` directory and edit the files. Assuming you have compass installed, `gem install compass` if not, just run `grunt server-sass` to automatically watch/compile everything.
 
