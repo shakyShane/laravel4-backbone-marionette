@@ -57,8 +57,33 @@ or
 
 ## That's IT
 Seriously. Run `php artisan serve` to see for yourself!
-It's been set up to allow you to develop locally in modules, and then you just use `grunt js-all` to build the Javascript.
-For more details, I'll be writing a blog post about it shorty.
+
+## What do I get?
+I've just done all the boring config stuff for you. You know, like directory structure, setting up modules & grunt tasks and having a build step.
+When you use this set up, you get to use AMD for your javascript development locally, and then with a single command `grunt js-all` everything get compiled
+ down into a single file. You don't even have to worry about your users having an outdated version of your scripts either, because when you run that task, it goes into the
+  `master.blade.php` template file and appends a timestamp to the distribution src file. All without any input from you.
+
+## Config
+It's configured to run out-of-the-box, but feel free to dive into `Gruntfile.js` and make any changes.
+
+## Compiling JS
+You'll notice that all the dependencies are loaded and compiled automatically into a single & your modules are done separately via AMD. All you need
+to do, is run `grunt js-all` and forget about it.
+
+## Running the tests
+As I said, it's fully configured for you already & I've even placed a couple of tests in place, just to show you how to go about loading
+modules and testing them, run this from the project root
+
+    grunt karma
+
+or
+
+    cd public/js/
+    karma start
+
+## Compiling SASS
+Again, all the config is done for you, so you can just dive into the `public/sass` directory and edit the files. Assuming you have compass installed, `gem install compass` if not, just run `grunt server-sass` to automatically watch/compile everything.
 
 ## Available grunt tasks
 
