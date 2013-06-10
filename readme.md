@@ -1,6 +1,6 @@
 ##Laravel 4, Backbone, Marionette, Jasmine, Karma & Sass Boilerplate
 
-This boilerplate sets up the front-end stuff for a Backbone App, follow this guide and pretty soon you'll be up and running.
+This boilerplate sets up the front-end stuff for a Backbone/Marionette App.
 
 ##Features
 1. Uses Grunt for task management.
