@@ -62,8 +62,8 @@ autoWatch = true;
 // - Safari (only Mac)
 // - PhantomJS
 // - IE (only Windows)
-//browsers = ["C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"]; // Hack because of an issue on Windows.
-browsers = ["Chrome"]; // You should be able to use this instead.
+browsers = ["C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"]; // Hack because of an issue on Windows.
+//browsers = ["Chrome"]; // You should be able to use this instead.
 
 
 // If browser does not capture in given timeout [ms], kill it

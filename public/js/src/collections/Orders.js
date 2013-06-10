@@ -1,22 +1,8 @@
 define([], function() {
 
-  var Orders = { Models : {}, Views : {}, Collections : {}, CustomFunctions : {} };
+  var Orders = {};
 
-  /**
-   * ----------------------------------------------
-   * Orders - Wrapper View
-   * ----------------------------------------------
-   */
-  Orders.Views.Wrapper = Marionette.ItemView.extend( {
-    template : '#'
-  });
-
-  /**
-   * @returns {Array}
-   */
-  Orders.CustomFunctions.clearAll = function( ) {
-    return [];
-  };
+  Orders.All = Backbone.Collection.extend({});
 
   return Orders;
 

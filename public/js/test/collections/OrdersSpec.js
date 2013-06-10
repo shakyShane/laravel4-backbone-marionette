@@ -2,8 +2,12 @@ define( ['collections/Orders' ], function( Orders ) {
 
   describe( 'Setup ', function() {
 
+    beforeEach( function() {
+      this.orders = new Orders.All;
+    });
+
     it( 'Module should be loaded', function() {
-      expect( Orders ).toBeDefined( );
+      expect( this.orders ).toBeDefined( );
     });
 
     it( 'Should be able to access the Dom though fixtures', function() {
