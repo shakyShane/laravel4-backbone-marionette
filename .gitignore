@@ -4,3 +4,8 @@
 composer.phar
 composer.lock
 .DS_Store
+.sass-cache
+node_modules/
+public/components/
+public/css/style.css
+public/js/dist
