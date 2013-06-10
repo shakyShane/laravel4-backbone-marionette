@@ -83,4 +83,8 @@ For more details, I'll be writing a blog post about it shorty.
     // Start the Karma server to run all tests
     grunt karma
 
+## Possible Issues
+
+**Karma**
+If you have problems with Karma running your tests, check the browsers setting in `/public/js/karma.conf.js` - you'll see a comment there that show how I got it working on windows.
 
