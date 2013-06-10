@@ -14,7 +14,7 @@ This boilerplate sets up the front-end stuff for a Backbone App, follow this gui
 #Pre-install
 If you don't have these - you'll need to install them globally:
 
-  npm install -g grunt-cli bower karma
+    npm install -g grunt-cli bower karma
 
 #Install (all steps required!)
 **Clone the repo**
