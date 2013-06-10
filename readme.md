@@ -33,15 +33,15 @@ Now it's time to grab everything needed for your front-end dev.
     npm install
 
 ## Install BOWER dependencies
-
+Bring in all the required Javascript libraries
     bower install
 
 ## Set an application key
-
+Needed to secure your app.
     php artisan key:generate
 
 ## Enter your Machine name for Local DEV
-
+Don't forget this, it's how the correct Javascript file is loaded when you are in dev/production environments
     // bootstrap/start.php
     $env = $app->detectEnvironment(array(
 
@@ -54,8 +54,22 @@ Now it's time to grab everything needed for your front-end dev.
     // Build all the Javascripts into a single file & break the cache
     grunt js-all
 
+    // Build JUST the dependencies without your AMD modules. ( useful when you add a new library )
+    grunt js-deps
+
+    // Break the Cache with the latest Javascript build
+    grunt break-cache-js
+
+    // Break the Cache with the latest CSS build
+    grunt break-cache-css
+
+    // Generate the style.css from the Sass files
+    grunt compass
+
     // Watch all files in the SASS directory & compile on save. (live reload included)
     grunt server-sass --force
 
     // Start the Karma server to run all tests
     grunt karma
+
+
