@@ -17,6 +17,7 @@ module.exports = function( grunt ) {
         files : [
           {
             src  : [
+              /** todo - Automate the insertion of these file paths **/
               'public/components/jquery/jquery.min.js',
               'public/components/backbone.marionette/public/javascripts/json2.js',
               'public/components/backbone.marionette/public/javascripts/underscore.js',
@@ -32,7 +33,7 @@ module.exports = function( grunt ) {
           {
             src : [
               '<%= js_deps %>.min.js',
-              'public/components/requirejs/require.js',
+              'public/components/requirejs/require.js', /** todo - Automate the insertion of this file path **/
               '<%= js_amd %>.js'
             ],
             dest : '<%= js_all %>.js'
