@@ -108,7 +108,7 @@ module.exports = function( grunt ) {
         configFile : 'public/js/karma.conf.js'
       }
     },
-    cache_breaker : {
+    cachebreaker : {
       js : {
         options : {
           asset_url : '<%= js_dist_file %>',
@@ -148,7 +148,7 @@ module.exports = function( grunt ) {
   grunt.registerTask( 'js-amd', ['requirejs', 'concat:all'] );
 
   /** Combine Dependencies, RequireJS & all Modules into a single file. **/
-  grunt.registerTask( 'js-all', ['concat:deps', 'uglify:deps', 'requirejs', 'concat:all', 'uglify:all', 'removelogging', 'cache_breaker:js'] );
+  grunt.registerTask( 'js-all', ['concat:deps', 'uglify:deps', 'requirejs', 'concat:all', 'uglify:all', 'removelogging', 'cachebreaker:js'] );
 
   /** Run the Live reload server (watches files in the public/sass directory **/
   grunt.registerTask( 'server-sass', ['livereload-start', 'regarde:css']);
