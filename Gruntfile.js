@@ -134,7 +134,6 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks( 'grunt-contrib-requirejs' );
   grunt.loadNpmTasks( 'grunt-regarde' );
   grunt.loadNpmTasks( 'grunt-contrib-livereload' );
-  grunt.loadNpmTasks( 'grunt-bower-requirejs' );
   grunt.loadNpmTasks( "grunt-remove-logging" );
   grunt.loadNpmTasks( 'grunt-karma' );
   grunt.loadNpmTasks( 'grunt-cache-breaker' );
