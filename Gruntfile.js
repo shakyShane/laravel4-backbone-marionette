@@ -148,10 +148,7 @@ module.exports = function( grunt ) {
   /** Combine Dependencies, RequireJS & all Modules into a single file. **/
   grunt.registerTask( 'js-all', ['concat:deps', 'uglify:deps', 'requirejs', 'concat:all', 'uglify:all', 'removelogging', 'cache_breaker:js'] );
 
-  grunt.registerTask( 'break-cache-css', ['cache_breaker:css'] );
-  grunt.registerTask( 'break-cache-js',  ['cache_breaker:js'] );
-
-  /** Run the Live reload server (watches SASS, BLADE & JS files) **/
+  /** Run the Live reload server (watches files in the public/sass directory **/
   grunt.registerTask( 'server-sass', ['livereload-start', 'regarde:css']);
 
 };

@@ -103,10 +103,10 @@ Again, all the config is done for you, so you can just dive into the `public/sas
     grunt js-deps
 
     // Break the Cache with the latest Javascript build
-    grunt break-cache-js
+    grunt break_cache:js
 
     // Break the Cache with the latest CSS build
-    grunt break-cache-css
+    grunt break_cache:css
 
     // Generate the style.css from the Sass files
     grunt compass

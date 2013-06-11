@@ -11,12 +11,13 @@
 
 <?php
   global $env;
-//  $env = 'prod';
+  // uncomment the following line to test that the correct file is loaded in production
+  // $env = 'prod';
 ?>
 
 @if($env !== 'local')
   <!-- Run [grunt js-all] to build this file -->
-  <script src="/js/dist/combined.clean.min.js?rel=1370884274907"></script>
+  <script src="/js/dist/combined.clean.min.js"></script>
 @else
   <script src="/js/dist/deps.min.js"></script>
   <script data-main="/js/src/main.js" src="/components/requirejs/require.js"></script>
