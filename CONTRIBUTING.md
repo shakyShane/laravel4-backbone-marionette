@@ -1,3 +1,5 @@
 # Contribution Guidelines
 
-Please submit all issues and pull requests to the [laravel/framework](http://github.com/laravel/framework) repository!
+I actively encourage pull-requests and any input you might have to improve this boilerplate.
+
+Don't be shy, if there's something you are not sure of, or something you think can be improved, let me know!
