@@ -7,17 +7,6 @@ requirejs.config({
   // Karma serves files from '/base'
   baseUrl : '/base/src',
 
-  paths : {
-    'jquery'     : '../lib/jquery',
-    'underscore' : '../lib/underscore'
-  },
-
-  shim     : {
-    'underscore' : {
-      exports : '_'
-    }
-  },
-
   // ask Require.js to load these files (all our tests)
   deps     : tests,
 

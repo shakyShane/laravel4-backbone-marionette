@@ -1,4 +1,4 @@
-define(['collections/Orders'], function(Orders) {
+define( ['collections/Orders'], function( Orders ) {
 
   return {};
 

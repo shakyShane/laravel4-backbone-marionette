@@ -19,5 +19,7 @@ define( ['collections/Orders' ], function( Orders ) {
       var data = getJSONFixture( 'json/data.json' );
       expect( data ).toBeDefined();
     });
+
   });
+
 });
