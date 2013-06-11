@@ -111,7 +111,8 @@ module.exports = function( grunt ) {
     cache_breaker : {
       js : {
         options : {
-          filename : '<%= js_dist_file %>'
+          asset_url : '<%= js_dist_file %>',
+          remove    : 'public'
         },
         files   : {
           '<%= php_files.layout %>' : ['<%= php_files.layout %>']
@@ -119,7 +120,8 @@ module.exports = function( grunt ) {
       },
       css : {
         options : {
-          filename : '<%= css_dist_file %>'
+          asset_url : '<%= css_dist_file %>',
+          remove    : 'public'
         },
         files   : {
           '<%= php_files.layout %>' : ['<%= php_files.layout %>']
