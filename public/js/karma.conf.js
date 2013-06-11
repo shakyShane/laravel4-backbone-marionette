@@ -51,9 +51,6 @@ colors = true;
 logLevel = LOG_INFO;
 
 
-// enable / disable watching file and executing tests whenever any file changes
-autoWatch = true;
-
 // Start these browsers, currently available:
 // - Chrome
 // - ChromeCanary
@@ -62,11 +59,14 @@ autoWatch = true;
 // - Safari (only Mac)
 // - PhantomJS
 // - IE (only Windows)
-browsers = ["C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"]; // Hack because of an issue on Windows.
-//browsers = ["Chrome"]; // You should be able to use this instead.
+browsers = ["Chrome"]; // If you are having problems with launching Karma, comment this line and use the one below on Windows.
+//browsers = ["C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"]; // Windows fix for Chrome.
 
 
 // If browser does not capture in given timeout [ms], kill it
+
+// enable / disable watching file and executing tests whenever any file changes
+autoWatch = true;
 captureTimeout = 60000;
 
 

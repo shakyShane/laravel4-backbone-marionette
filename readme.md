@@ -92,7 +92,7 @@ Just take a look at `js/test/collections/OrdersSpec.js` to see how to load fixtu
 
 
 ## Compiling SASS
-Again, all the config is done for you, so you can just dive into the `public/sass` directory and edit the files. Assuming you have compass installed, `gem install compass` if not, just run `grunt server-sass` to automatically watch/compile everything.
+Again, all the config is done for you, so you can just dive into the `public/sass` directory and edit the files. Assuming you have compass installed, just run `grunt server-sass` to automatically watch/compile everything.
 
 ## Available grunt tasks
 
@@ -120,5 +120,5 @@ Again, all the config is done for you, so you can just dive into the `public/sas
 ## Possible Issues
 
 **Karma**
-If you have problems with Karma running your tests, check the browsers setting in `/public/js/karma.conf.js` - you'll see a comment there that show how I got it working on windows.
+If you have problems with Karma running your tests, check the browsers setting in `/public/js/karma.conf.js` - you'll see a comment there that shows how I got it working on Windows
 
