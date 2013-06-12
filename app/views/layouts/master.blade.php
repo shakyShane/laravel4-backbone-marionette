@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Laravel 4, Backbone & Marionette Boilerplate</title>
+  {{-- Run [grunt compass] to generate a style.css --}}
   <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
@@ -16,7 +17,7 @@
 ?>
 
 @if($env !== 'local')
-  <!-- Run [grunt js-all] to build this file -->
+  {{-- Run [grunt js-all] to build this file --}}
   <script src="/js/dist/combined.clean.min.js"></script>
 @else
   <script src="/js/dist/deps.min.js"></script>
