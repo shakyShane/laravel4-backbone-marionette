@@ -5,5 +5,6 @@ curl -Ss http://getcomposer.org/installer | php
 php composer.phar install
 npm install
 bower install
+grunt release
 php artisan key:generate
 php artisan serve
