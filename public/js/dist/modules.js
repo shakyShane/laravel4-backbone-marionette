@@ -1,1 +1,1 @@
-define("collections/Orders",[],function(){var e={};return e.All=Backbone.Collection.extend({}),e}),define("views/AppView",["collections/Orders"],function(e){return{}}),require(["views/AppView"],function(e){}),define("main",function(){});
+define("collections/Orders",[],function(){var e={};return e.All=Backbone.Collection.extend({}),e}),define("views/AppView",["collections/Orders"],function(){return{}}),require(["views/AppView"],function(e){e&&console.log("wahoo, everything is working!")}),define("main",function(){});

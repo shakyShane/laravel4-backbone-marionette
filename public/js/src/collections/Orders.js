@@ -1,3 +1,7 @@
+'use strict';
+
+/*global define*/
+/*global Backbone*/
 define( function() {
 
   var Orders = {};
