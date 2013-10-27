@@ -1,5 +1,6 @@
-define( ['collections/Orders'], function( Orders ) {
+'use strict';
 
+/*global define*/
+define( ['collections/Orders'], function() {
   return {};
-
 });

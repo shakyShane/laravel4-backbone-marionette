@@ -1,11 +1,15 @@
-define( ['views/AppView'], function( AppView ) {
+'use strict';
 
-  describe( 'Loading Module : ', function() {
+/*global define*/
+/*global describe*/
+/*global it*/
+/*global expect*/
+define(['views/AppView'], function (AppView) {
 
-    it( 'should be loaded', function() {
-      expect( AppView ).toBeDefined();
+    describe('Loading Module: ', function () {
+
+        it('should be loaded', function () {
+            expect(AppView).toBeDefined();
+        });
     });
-
-  });
-
 });
