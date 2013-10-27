@@ -24,6 +24,10 @@ If you don't have these - you'll need to install them globally:
 **Now `cd` into that newly created directory**
 
     cd projectDir
+    rm -rf .git
+
+** Alternatively, just download & extract the ZIP **
+
 
 **Install Composer**
 
