@@ -9,9 +9,53 @@
     "grunt-contrib-compass": "~0.2.0",
     "grunt-contrib-requirejs": "~0.4.0",
     "grunt-contrib-livereload": "~0.1.2",
-    "grunt-regarde": "~0.1.1",
-    "grunt-remove-logging": "~0.1.1",
-    "grunt-karma": "~0.4.4",
-    "grunt-cache-breaker" : "~0.4.0"
+    "grunt-karma": "~0.6.2",
+    "grunt-cache-breaker": "~0.4.0",
+    "grunt-browser-sync": "~0.2.1",
+    "grunt-contrib-jshint": "~0.7.0"
+  },
+  "description": "This boilerplate sets up the front-end stuff for a Laravel/Backbone/Marionette/App.",
+  "version": "0.0.0",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-browser-sync": "~0.2.1",
+    "grunt-cache-breaker": "~0.4.0",
+    "grunt-contrib-compass": "~0.2.0",
+    "grunt-contrib-concat": "~0.1.3",
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-livereload": "~0.1.2",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-karma": "~0.6.2",
+    "karma": "~0.10.4",
+    "karma-chrome-launcher": "~0.1.0",
+    "karma-coffee-preprocessor": "~0.1.0",
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "grunt-contrib-sass": "~0.2.2",
+    "karma-jasmine": "~0.1.3",
+    "karma-phantomjs-launcher": "~0.1.0",
+    "karma-requirejs": "~0.1.0",
+    "karma-script-launcher": "~0.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shakyShane/laravel4-backbone-marionette.git"
+  },
+  "keywords": [
+    "laravel",
+    "backbone",
+    "marionette",
+    "sass"
+  ],
+  "author": "shakyshane",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/shakyShane/laravel4-backbone-marionette/issues"
   }
 }
