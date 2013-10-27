@@ -12,11 +12,16 @@ This boilerplate sets up the front-end stuff for a Backbone/Marionette App.
 7. Has Sass & Live-reload support.
 
 #Pre-install
-If you don't have these - you'll need to install them globally:
+If you don't have these - you'll need to install them globally: (run with `sudo` if you get any errors)
 
     npm install -g grunt-cli bower
 
-#Install (all steps required!)
+#Fast install
+If you're on a mac, have curl & php 5.4 or above, you're in luck - it's a one-liner for you.
+
+    curl -Ss https://raw.github.com/shakyShane/laravel4-backbone-marionette/master/install.sh | bash /dev/stdin project-name
+
+#Normal Install (all steps required!)
 **Clone the repo**
 
     git clone https://github.com/shakyShane/laravel4-backbone-marionette.git projectDir
