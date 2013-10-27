@@ -14,14 +14,16 @@ This boilerplate sets up the front-end stuff for a Backbone/Marionette App.
 #Pre-install
 If you don't have these - you'll need to install them globally:
 
-    npm install -g grunt-cli bower karma
+    npm install -g grunt-cli bower
 
 #Install (all steps required!)
 **Clone the repo**
 
     git clone https://github.com/shakyShane/laravel4-backbone-marionette.git projectDir
 
-Now `cd` into that newly created directory
+**Now `cd` into that newly created directory**
+
+    cd projectDir
 
 **Install Composer**
 
@@ -47,12 +49,13 @@ or
 
     php artisan key:generate
 
-**Enter your Machine name for Local DEV**
+**Enter your Machine name or localhost for Local DEV**
+
 
     // Don't forget this, it's how the correct Javascript file is loaded when you are in dev/production environments
     // [bootstrap/start.php]
     $env = $app->detectEnvironment(array(
-    	'local' => array('yourmachinename'),
+    	'local' => array('localhost'),
     ));
 
 ## That's it
@@ -69,7 +72,7 @@ It's configured to run out-of-the-box, but feel free to dive into `Gruntfile.js`
 
 ## Compiling JS
 You'll notice that all the dependencies are loaded and compiled automatically into a single file & your modules are done separately via AMD. All you need
-to do, is run `grunt js-all` and forget about it.
+to do, is run `grunt build-js` and forget about it.
 
 ## Running the tests
 As I said, it's fully configured for you already & I've even placed a couple of tests in place, just to show you how to go about loading
@@ -77,14 +80,12 @@ modules and testing them.
 
 When ready to start the Karma Test Runner, just run:
 
-    grunt karma
+    grunt karma:unit
 
-or
+or if you want to run the tests on every file-change
 
-    cd public/js/
-    karma start
+    grunt karma:watch
 
-It will continue watching your files and automatically re-run the tests on each save.
 
 #### Quick note on *Fixtures*
 You want to load JSON or HTML into your tests from files? No worries, I've pre-configured the Karma Test Runner to use Jasmine-jquery with the correct paths set.
@@ -92,12 +93,16 @@ Just take a look at `js/test/collections/OrdersSpec.js` to see how to load fixtu
 
 
 ## Compiling SASS
-Again, all the config is done for you, so you can just dive into the `public/sass` directory and edit the files. Assuming you have compass installed, just run `grunt server-sass` to automatically watch/compile everything.
+Again, all the config is done for you, so you can just dive into the `public/sass` directory and edit the files. Assuming you have compass installed, just run `grunt watch:sass` to automatically watch/compile everything.
+
+## Compiling SASS + Live reload via [Browser-sync](https://github.com/shakyShane/grunt-browser-sync)
+When you run `grunt server-sass`, you'll get an html snippet in the command line that you can paste into **master.blade.php**. This gives you all
+the features of browser-sync including live CSS injecting with no page reload.
 
 ## Available grunt tasks
 
-    // Build all the Javascripts into a single file & break the cache
-    grunt js-all
+    // Lint all Javascripts, combine/minify into a single file & break the cache
+    grunt build-js
 
     // Build JUST the dependencies without your AMD modules. ( useful when you add a new library )
     grunt js-deps
@@ -111,11 +116,29 @@ Again, all the config is done for you, so you can just dive into the `public/sas
     // Generate the style.css from the Sass files
     grunt compass
 
-    // Watch all files in the SASS directory & compile on save. (live reload included)
+    // Generate the style.css from the Sass files & break the cache
+    grunt build-css
+
+    // Watch all files in the SASS directory & compile on save.
+     grunt watch:sass
+
+    // Watch all files in the SASS directory & compile on save. (browser-sync included)
     grunt server-sass --force
 
-    // Start the Karma server to run all tests
-    grunt karma
+    // Lint JS files & run the tests once
+    grunt test
+
+    // Lint JS files. Watching JS files for changes & run tests on each change
+    grunt test-watch
+
+    // Run the tests
+    grunt karma:unit
+
+    // Watch all JS files and run the tests when a file changes.
+    grunt karma:unit
+
+    // alias for test, build-js & build-css - basically everything you want to do on before a release
+    grunt release
 
 ## Possible Issues
 

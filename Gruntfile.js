@@ -100,7 +100,7 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            css: {
+            sass: {
                 files: '<%= dirs.sass %>/**',
                 tasks: ['compass']
             },
@@ -196,6 +196,6 @@ module.exports = function (grunt) {
     grunt.registerTask('release', ['test', 'build-js', 'build-css']);
 
     /** Run the Live reload server (watches files in the public/sass directory **/
-    grunt.registerTask('server-sass', ['browser_sync', 'watch']);
+    grunt.registerTask('server-sass', ['browser_sync', 'watch:sass']);
 
 };
