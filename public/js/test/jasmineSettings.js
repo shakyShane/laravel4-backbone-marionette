@@ -1,3 +1,5 @@
+'use strict';
+/*global jasmine*/
 (function( jas ) {
 
   var path = '/base/test/fixtures';
