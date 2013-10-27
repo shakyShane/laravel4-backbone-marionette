@@ -101,6 +101,7 @@ the features of browser-sync including live CSS injecting with no page reload.
 
 ## Available grunt tasks
 
+```language-js
     // Lint all Javascripts, combine/minify into a single file & break the cache
     grunt build-js
 
@@ -139,6 +140,7 @@ the features of browser-sync including live CSS injecting with no page reload.
 
     // alias for test, build-js & build-css - basically everything you want to do on before a release
     grunt release
+```
 
 ## Possible Issues
 
